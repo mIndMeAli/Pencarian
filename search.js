@@ -143,7 +143,7 @@ function populateTable(data) {
             <td>${row.Nama || '-'}</td>
             <td>${row["Unit Kerja"] || '-'}</td>
             <td>${row["Jenis Pengusulan"] || '-'}</td>
-            <td>${row["Tanggal Usul Diterima BKPSDMD"] || '-'}</td>
+            <td>${formatTanggal(row["Tanggal Usul Diterima BKPSDMD"])}</td>
             <td>${row["Status Usulan"] || '-'}</td>
             <td>${row.Keterangan || '-'}</td>
             <td>${row.PIC || '-'}</td>
