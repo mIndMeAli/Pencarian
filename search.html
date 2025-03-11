@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cari Data Pegawai</title>
+    <link rel="stylesheet" href="ssearch.css">
+</head>
+<body>
+    <div class="navr">
+        <nav>
+            <a href="index.html" class="button">Beranda</a>
+            <a href="search.html" class="button">Cari</a>
+        </nav>
+    </div>
+    
+    <header>
+        <h2>Pencarian Data Pegawai</h2>
+    </header>
+    
+    <div class="midsec">
+        <div class="cricont">
+            <div class="filter-container">
+                <div class="filter-row"> 
+                    <label for="stkp">Status Kepegawaian:</label>
+                    <select name="stkp" id="stkp">
+                        <option value="">Pilih</option>
+                        <option value="PPPK">PPPK</option>
+                        <option value="PNS">PNS</option>
+                    </select>
+                    
+                    <label for="search">Masukkan:</label>
+                    <input type="text" id="search" placeholder="NIP atau Nama" disabled>
+                </div>
+                <div class="button-container">
+                    <button id="searchButton" disabled>Cari</button>
+                </div>
+                <div id="errorMessage" style="color: red; display: none;">
+                    Masukkan nama terlebih dahulu!
+                </div>
+                <div id="noInputMessage" style="display: none; color: red; font-size: 16px; margin-top: 10px;">
+                    Isi Status Kepegawaian Dulu!
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <table id="dataTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>NIP</th>
+                <th>Nama</th>
+                <th>Unit Kerja</th>
+                <th>Jenis Pengusulan</th>
+                <th>Tanggal Usul Diterima BKPSDMD</th>
+                <th>Status Usulan</th>
+                <th>Keterangan</th>
+                <th>PIC</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- For Data rows -->
+        </tbody>
+    </table>
+    
+    <div id="noDataMessage" style="display: none; color: red; font-size: 16px; margin-top: 10px;">
+        Tidak ada data ditemukan
+    </div>
+    
+    <div class="futer">
+        <p> Copyright &copy; 2025 Halaman Pencarian | Created By BocahPsbrtg</p>
+    </div>    
+
+    <script src="search.js"></script>
+    <script>
+        async function loadData() {
+          let response = await fetch("https://script.google.com/macros/s/AKfycbxqtSGr4Q79fMSfVgXX-rX6wlnmMoB2GHpzGfuayx-yif8-8R_hsEHaXb0sAcGRLym_/exec");
+          let data = await response.json();
+          console.log(data);
+        }
+        loadData();
+    </script>
+</body>
+</html>

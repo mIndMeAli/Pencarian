@@ -1,0 +1,81 @@
+/* Reset Default Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f2f2f2, #e0e0e0);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.navr {
+    position: fixed;
+    width: 100%;
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navr nav {
+    display: flex;
+    gap: 15px;
+}
+
+.button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background: #666;
+    color: white;
+    margin-top: 60px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Footer */
+.futer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+    margin-top: auto;
+}
