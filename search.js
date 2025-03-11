@@ -129,7 +129,8 @@ function formatTanggal(isoString) {
     let date = new Date(isoString);
     if (isNaN(date)) return '-';
     let options = { day: '2-digit', month: 'long', year: 'numeric' };
-    return date.toLocalDateString('id-ID', options);
+    return date.toLocaleDateString('id-ID', options);
+}
 
 function populateTable(data) {
     let tbody = document.querySelector("#dataTable tbody");
