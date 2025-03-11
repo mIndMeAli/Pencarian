@@ -66,6 +66,14 @@ function convertRow(row) {
     };
 }
 
+function showModal() {
+    document.getElementById("warningModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("warningModal").style.display = "none";
+}
+
 async function filterTable() {
     let input = document.getElementById("search").value.toLowerCase().trim();
     let stkp = document.getElementById("stkp").value;
@@ -75,6 +83,7 @@ async function filterTable() {
     let errorMessage = document.getElementById("errorMessage");
 
     if (!input) {
+        showModal();
         errorMessage.innerText = "Masukkan NIP atau Nama terlebih dahulu!";
         errorMessage.style.display = "block";
         table.style.display = "none";
@@ -114,6 +123,13 @@ async function filterTable() {
     table.style.display = "table";
     populateTable(filteredData);
 }
+
+function formatTanggal(isoString) {
+    if (!isoString) return '-';
+    let date = new Date(isoString);
+    if (isNaN(date)) return '-';
+    let options = { day: '2-digit', month: 'long', year: 'numeric' };
+    return date.toLocalDateString('id-ID', options);
 
 function populateTable(data) {
     let tbody = document.querySelector("#dataTable tbody");
