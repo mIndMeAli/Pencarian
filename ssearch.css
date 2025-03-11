@@ -181,6 +181,34 @@ input:enabled {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.modal-content {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.modal button {
+    padding: 5px 10px;
+    border: none;
+    background: blue;
+    color: white;
+    cursor: pointer;
+}
+
 /* Table Styling */
 table {
     width: 100%;
