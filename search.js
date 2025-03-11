@@ -6,11 +6,23 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     fullData = await fetchAllData();
 
-    stkp.addEventListener("change", function () {
+    stkp.addEventListener("change", async function () {
         let isDisabled = !stkp.value;
         search.disabled = isDisabled;
         searchButton.disabled = isDisabled;
         noInputMessage.style.display = isDisabled ? "block" : "none";
+
+        if (!isDisabled) {
+            try {
+                let response = await fetch("https://script.google.com/macros/s/AKfycbykiB5UbOlG3d20C54ULCNzjbmt6FGFvc9haWf2mRDt_MR53Aw7DcqCayewA7BT-FDT/exec") ;
+                let data = await response.json();
+                search.value = data.nama;
+            } catch {
+                console.error("Gagal mengambil data:", error);
+            }
+
+            search.focus();
+        }
     });
 
     searchButton.addEventListener("click", filterTable);
