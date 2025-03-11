@@ -59,7 +59,7 @@ function convertRow(row) {
         Nama: row.c[2]?.v || '-',
         "Unit Kerja": row.c[3]?.v || '-',
         "Jenis Pengusulan": row.c[4]?.v || '-',
-        "Tanggal Usul Diterima BKPSDM": row.c[5]?.v || '-',
+        "Tanggal Usul Diterima BKPSDMD": row.c[5]?.v || '-',
         "Status Usulan": row.c[6]?.v || '-',
         Keterangan: row.c[7]?.v || '-',
         PIC: row.c[8]?.v || '-'
@@ -126,7 +126,7 @@ function populateTable(data) {
             <td>${row.Nama || '-'}</td>
             <td>${row["Unit Kerja"] || '-'}</td>
             <td>${row["Jenis Pengusulan"] || '-'}</td>
-            <td>${row["Tanggal Usul Diterima BKPSDM"] || '-'}</td>
+            <td>${row["Tanggal Usul Diterima BKPSDMD"] || '-'}</td>
             <td>${row["Status Usulan"] || '-'}</td>
             <td>${row.Keterangan || '-'}</td>
             <td>${row.PIC || '-'}</td>
